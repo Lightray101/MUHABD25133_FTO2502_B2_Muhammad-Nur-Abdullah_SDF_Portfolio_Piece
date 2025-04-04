@@ -1,0 +1,524 @@
+/* Base Styles */
+:root {
+  --primary-color: #1a1a1a;
+  --secondary-color: #4a4a4a;
+  --accent-color: #45b08c;
+  --text-color: #1a1a1a;
+  --border-color: #e5e7eb;
+  --section-bg: #ffffff;
+  --green-bg: #45b08c;
+  --light-green-bg: #e8f5f0;
+  --orange-bg: #e85d3d;
+  --grey-bg: #808080;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #808080;
+  background-image: url("../images/background.png");
+  background-repeat: repeat;
+  background-position: center;
+  min-height: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+  color: var(--text-color);
+  min-height: 100vh;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  position: relative;
+  background-color: transparent;
+  font-size: 1.1rem;
+}
+
+/* Header Section with Image */
+.header {
+  display: flex;
+  gap: 2rem;
+  background-color: var(--section-bg);
+  padding: 2.5rem;
+  border-radius: 1.8rem;
+  margin: 4rem auto 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.profile-image {
+  width: 14rem;
+  height: 14rem;
+  border-radius: 0.5rem;
+  object-fit: cover;
+}
+
+.header-content {
+  flex: 1;
+}
+
+.header h1 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.header p {
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  line-height: 1.6;
+}
+
+/* Proficiency and Skills Layout */
+.proficiency-skills-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.proficiency,
+.skills {
+  background-color: var(--section-bg);
+  padding: 2rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+/* Progress Bars */
+.skill-level {
+  margin-bottom: 1.5rem;
+}
+
+.skill-level:last-child {
+  margin-bottom: 0;
+}
+
+.skill-level span {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--secondary-color);
+  font-size: 1.2rem;
+}
+
+.progress-bar {
+  height: 10px;
+  background-color: var(--light-green-bg);
+  border-radius: 5px;
+  position: relative;
+}
+
+.progress-bar::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  background-color: var(--accent-color);
+  border-radius: 5px;
+  transition: width 0.3s ease;
+}
+
+.progress-javascript::after {
+  width: 15%;
+}
+.progress-react::after {
+  width: 12%;
+}
+.progress-nodejs::after {
+  width: 10%;
+}
+.progress-html::after {
+  width: 95%;
+}
+.progress-git::after {
+  width: 85%;
+}
+.progress-problem-solving::after {
+  width: 90%;
+}
+.progress-collaboration::after {
+  width: 85%;
+}
+.progress-api::after {
+  width: 50%;
+}
+
+/* Skills Section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.skill-tag {
+  background-color: var(--light-green-bg);
+  color: var(--primary-color);
+  padding: 1rem 1.5rem;
+  border-radius: 0.6rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+}
+
+/* Projects Section */
+.projects-container {
+  background-color: var(--section-bg);
+  padding: 2rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+  overflow: hidden;
+}
+
+.projects {
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+  width: 100%;
+}
+
+.project-card {
+  background-color: var(--section-bg);
+  padding: 2rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.project-card.featured {
+  background-color: var(--green-bg);
+  color: white;
+}
+
+.project-card .heart-icon {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  font-size: 2rem;
+  color: var(--orange-bg);
+}
+
+.project-card.featured .heart-icon {
+  color: white;
+}
+
+.project-year {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+}
+
+.project-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  word-wrap: break-word;
+}
+
+.project-card p {
+  margin-bottom: 0.8rem;
+  word-wrap: break-word;
+  font-size: 1.15rem;
+}
+
+/* Education and Tools Layout */
+.education-tools-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  align-items: start;
+}
+
+/* Education and Experience Sections */
+.education,
+.experience {
+  background-color: var(--section-bg);
+  padding: 2rem;
+  border-radius: 1.2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.education-item,
+.experience-item {
+  padding: 1.5rem;
+  border-radius: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.education-item:nth-child(odd),
+.experience-item:nth-child(odd) {
+  background-color: var(--green-bg);
+  color: white;
+}
+
+.education-item:nth-child(even),
+.experience-item:nth-child(even) {
+  background-color: var(--light-green-bg);
+}
+
+.education-item h3,
+.experience-item h3 {
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.education-item p,
+.experience-item p {
+  font-size: 1.15rem;
+  margin-bottom: 0.8rem;
+}
+
+.education-item ul,
+.experience-item ul {
+  padding-left: 1.5rem;
+}
+
+.education-item li,
+.experience-item li {
+  margin-bottom: 0.5rem;
+  font-size: 1.15rem;
+}
+
+/* Tools Section */
+.tools {
+  background-color: var(--section-bg);
+  padding: 2rem;
+  border-radius: 1.2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.tools-subsection {
+  margin-bottom: 1.8rem;
+}
+
+.tools-subsection:last-child {
+  margin-bottom: 0;
+}
+
+.subsection-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 1.2rem;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+}
+
+.tool-item {
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--light-green-bg);
+  border-radius: 0.8rem;
+  padding: 1.2rem;
+  transition: transform 0.2s ease;
+}
+
+.tool-item:hover {
+  transform: translateY(-2px);
+}
+
+.tool-item i {
+  font-size: 2.4rem;
+  color: var(--accent-color);
+}
+
+.tool-image {
+  width: 3.2rem;
+  height: 3.2rem;
+  object-fit: contain;
+  filter: brightness(1.1);
+  transition: transform 0.2s ease;
+}
+
+.tool-item:hover .tool-image {
+  transform: scale(1.1);
+}
+
+/* Specific icon colors */
+.fa-html5 {
+  color: #e34f26;
+}
+
+.fa-css3-alt {
+  color: #1572b6;
+}
+
+.fa-js {
+  color: #f7df1e;
+}
+
+.fa-github {
+  color: #181717;
+}
+
+.fa-npm {
+  color: #cb3837;
+}
+
+.fa-figma {
+  color: #f24e1e;
+}
+
+/* Contact Section */
+.contact {
+  background-color: var(--orange-bg);
+  padding: 2.5rem;
+  border-radius: 1.2rem;
+  color: white;
+  text-align: center;
+}
+
+.contact h3 {
+  font-size: 1.7rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: white;
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.contact-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+/* Section Headings */
+.proficiency h2,
+.skills h2,
+.projects h2,
+.education h2,
+.experience h2,
+.tools h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+/* Mobile View Section Headings */
+@media screen and (max-width: 768px) {
+  body {
+    padding: 1rem;
+    max-width: 100%;
+    font-size: 1rem;
+  }
+
+  .header {
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin: 1rem auto;
+    min-height: auto;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .profile-image {
+    width: 8.75rem;
+    height: 8.75rem;
+    border-radius: 0.5rem;
+    flex-shrink: 0;
+  }
+
+  .header-content {
+    padding: 1rem;
+    flex: 1;
+    background-color: var(--light-green-bg);
+    border-radius: 0.5rem;
+    max-width: calc(100% - 9.75rem);
+    min-width: 0;
+  }
+
+  .header h1 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+    word-wrap: break-word;
+  }
+
+  .header p {
+    font-size: 1rem;
+    line-height: 1.4;
+    word-wrap: break-word;
+  }
+
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .project-card {
+    padding: 1rem;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .education-tools-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .education,
+  .experience,
+  .tools {
+    height: auto;
+  }
+
+  .proficiency-skills-container {
+    grid-template-columns: 1fr;
+  }
+
+  .tools-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+  }
+
+  .tool-item {
+    padding: 0.5rem;
+  }
+
+  .proficiency h2,
+  .skills h2,
+  .projects h2,
+  .education h2,
+  .experience h2,
+  .tools h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1.2rem;
+  }
+}
